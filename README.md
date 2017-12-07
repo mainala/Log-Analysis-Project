@@ -13,11 +13,17 @@ This python module builds an informative summary from logs using complex quefies
 This project provides the following information:
 
 *The three most popular articles on the website.
-'def popular_authors()'
+'''python
+def popular_articles()
+'''
 *The three most popular authors on the website.
-'def popular_authors()'
+'''python 
+def popular_authors()'
+'''
 *The days with more than 1% errors while accessing websites.
-'def error_days()'
+'''python
+def error_days()
+'''
 
 Views:
 ------
@@ -25,17 +31,21 @@ Views:
 To acheive results for the third question, the following views were made:
 
 *accesses
-'create view access as select date(time) as date, count(*) as accesses
+'''
+create view access as select date(time) as date, count(*) as accesses
 from log
 group by date
-order by accesses desc;'
+order by accesses desc;
+'''
 
 *errors
-'create view error as select date(time) as errordate, count(*) as errors
+'''
+create view error as select date(time) as errordate, count(*) as errors
 from log
 where status like '%404%'
 group by errordate
-order by errors desc;'
+order by errors desc;
+'''
 
 Instructions:
 -------------
@@ -61,7 +71,7 @@ and then
 
 The output is:
 
-![result]("result.png")
+![result]("https://github.com/mainala/Log-Analysis-Project/blob/master/result.PNG")
 
 
 
