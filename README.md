@@ -13,17 +13,17 @@ This python module builds an informative summary from logs using complex quefies
 This project provides the following information:
 
 *The three most popular articles on the website.
-'''python
+```python
 def popular_articles()
-'''
+```
 *The three most popular authors on the website.
-'''python 
+```python 
 def popular_authors()'
-'''
+```
 *The days with more than 1% errors while accessing websites.
-'''python
+```python
 def error_days()
-'''
+```
 
 Views:
 ------
@@ -31,47 +31,41 @@ Views:
 To acheive results for the third question, the following views were made:
 
 *accesses
-'''
+```
 create view access as select date(time) as date, count(*) as accesses
-from log
-group by date
-order by accesses desc;
-'''
+from log group by date order by accesses desc;
+```
 
 *errors
-'''
+```
 create view error as select date(time) as errordate, count(*) as errors
-from log
-where status like '%404%'
-group by errordate
-order by errors desc;
-'''
+from log where status like '%404%' group by errordate order by errors desc;
+```
 
 Instructions:
 -------------
-*Download [Vagrant](https://www.vagrantup.com/) and virtualbox[Virtialbox](https://www.virtualbox.org/wiki/Downloads), and install them.
+* Download [Vagrant](https://www.vagrantup.com/) and virtualbox[Virtialbox](https://www.virtualbox.org/wiki/Downloads), and install them.
 
-*Clone [this](https://github.com/udacity/fullstack-nanodegree-vm) repository:
+* Clone [this](https://github.com/udacity/fullstack-nanodegree-vm) repository:
 
-*from your shell, go to the ditectory that contains the .vagrant file and run there commands to set up the linux VM:
-'vagrant up'
+* from your shell, go to the ditectory that contains the .vagrant file and run there commands to set up the linux VM:
+```vagrant up```
 and then
-'vagrant ssh'
+```vagrant ssh```
 
-*Download this [data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) and unzip it. Copy the file inside it(newsdata.sql) into the vagrant directory.
+* Download this [data](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) and unzip it. Copy the file inside it(newsdata.sql) into the vagrant directory.
 
-*Now load the database into the VM using this command:
-'psql -d news -f newsdata.sql;'
+* Now load the database into the VM using this command:
+```psql -d news -f newsdata.sql;```
 
-*Now, create the views described above by copying the code given above.
+* Now, create the views described above by copying the code given above.
 
-*Run Module
-
-'python analyzer.py'
-
-The output is:
-
-![result]("https://github.com/mainala/Log-Analysis-Project/blob/master/result.PNG")
+* Run Module
+```python
+analyzer.py
+```
+* The output is:
+![result]("https://raw.githubusercontent.com/mainala/Log-Analysis-Project/master/result.PNG")
 
 
 
