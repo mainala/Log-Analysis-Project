@@ -65,7 +65,7 @@ and then
 python analyzer.py
 ```
 * The output is:
-![result]("result.png?raw=true")
+![Output Image]("https://raw.githubusercontent.com/mainala/Log-Analysis-Project/master/images/result.PNG")
 
 
 
